@@ -1,6 +1,6 @@
 const firstNum = document.querySelector("#firstNum");
 const secondNum = document.querySelector("#secondNum");
-const button = document.querySelector("#button");
+const nextButton = document.querySelector("#next");
 const operator = document.querySelector("#operator");
 const answer = document.querySelector("#answer");
 const checkResult = document.querySelector("#checkResult");
@@ -13,13 +13,13 @@ totalProblemsElement.textContent = totalProblems;
 
 
 
-button.addEventListener("click", function () {
+nextButton.addEventListener("click", function () {
     generateRandomOperands();
     answer.value = "";
     outcomeAnswer.textContent = "";
     answer.disabled = false;
     numberOfEquation();
-
+    disableNextButton();
 })
 
 checkResult.addEventListener("click", function() {
@@ -78,15 +78,6 @@ function checkAnswer() {
     }
 }
 
-// function numberOfEquation(){
-//     const totalProblems = 10;
-//     const num = +countProblem.textContent;
-
-//     for(var i = num; i <= totalProblems; i++){
-//         countProblem.textContent = i;
-//       }
-// }
-
 
 
 function numberOfEquation(){
@@ -95,7 +86,21 @@ function numberOfEquation(){
     if(num < totalProblems){
         countProblem.textContent++
     }
+    
 }
+
+function disableNextButton(){
+    const num = +countProblem.textContent;
+    if(num === totalProblems){
+        return nextButton.disabled = true;
+    }
+}
+
+
+
+
+
+    
 
     
 
