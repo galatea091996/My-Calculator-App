@@ -34,6 +34,10 @@ operator.innerHTML = randomOperator();
 /** Answer input set to be focus */
 answer.focus();
 
+/** Setting buttons to be disabled when page loads */
+nextButton.disabled = true;
+checkResult.disabled = true;
+
 
 /** 
  * Generate a random number betweem 0 and max (not inclusive)
