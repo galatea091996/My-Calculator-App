@@ -31,7 +31,7 @@ checkResult.addEventListener("click", function() {
 generateRandomOperands();
 operator.innerHTML = randomOperator();
 
-/** Answer input set to focus */
+/** Answer input set to be focus */
 answer.focus();
 
 
