@@ -31,6 +31,9 @@ checkResult.addEventListener("click", function() {
 generateRandomOperands();
 operator.innerHTML = randomOperator();
 
+/** Answer input set to focus */
+answer.focus();
+
 
 /** 
  * Generate a random number betweem 0 and max (not inclusive)
