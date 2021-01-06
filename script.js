@@ -28,6 +28,11 @@ checkResult.addEventListener("click", function() {
 
 })
 
+// Input event listener
+answer.addEventListener("input", function(){
+    checkResult.disabled = false;
+})
+
 generateRandomOperands();
 operator.innerHTML = randomOperator();
 
