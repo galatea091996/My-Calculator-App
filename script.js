@@ -20,11 +20,14 @@ nextButton.addEventListener("click", function () {
     answer.disabled = false;
     numberOfEquation();
     disableNextButton();
+    nextButton.disabled = true;
 })
 
 checkResult.addEventListener("click", function() {
     checkAnswer();
     answer.disabled = true;
+    checkResult.disabled = true;
+    nextButton.disabled = false;
 
 })
 
