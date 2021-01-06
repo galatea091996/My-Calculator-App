@@ -12,7 +12,7 @@ const totalProblems = 10;
 totalProblemsElement.textContent = totalProblems;
 
 
-
+// Next button event listener
 nextButton.addEventListener("click", function () {
     generateRandomOperands();
     answer.value = "";
@@ -21,8 +21,10 @@ nextButton.addEventListener("click", function () {
     numberOfEquation();
     disableNextButton();
     nextButton.disabled = true;
+    answer.focus();
 })
 
+// Check result event listener
 checkResult.addEventListener("click", function() {
     checkAnswer();
     answer.disabled = true;
