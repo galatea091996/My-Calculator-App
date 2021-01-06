@@ -12,7 +12,7 @@ const totalProblems = 10;
 totalProblemsElement.textContent = totalProblems;
 
 
-
+// Next button event listener
 nextButton.addEventListener("click", function () {
     generateRandomOperands();
     answer.value = "";
@@ -20,16 +20,33 @@ nextButton.addEventListener("click", function () {
     answer.disabled = false;
     numberOfEquation();
     disableNextButton();
+    nextButton.disabled = true;
+    answer.focus();
 })
 
+// Check result event listener
 checkResult.addEventListener("click", function() {
     checkAnswer();
     answer.disabled = true;
+    checkResult.disabled = true;
+    nextButton.disabled = false;
 
+})
+
+// Input event listener
+answer.addEventListener("input", function(){
+    checkResult.disabled = false;
 })
 
 generateRandomOperands();
 operator.innerHTML = randomOperator();
+
+/** Answer input set to be focus */
+answer.focus();
+
+/** Setting buttons to be disabled when page loads */
+nextButton.disabled = true;
+checkResult.disabled = true;
 
 
 /** 
