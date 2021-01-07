@@ -8,7 +8,7 @@ const outcomeAnswer = document.querySelector("#outcomeAnswer");
 const countProblem = document.querySelector("#countProblem");
 const totalProblemsElement = document.querySelector("#total-problems");
 
-const totalProblems = 10;
+const totalProblems = 3;
 totalProblemsElement.textContent = totalProblems;
 
 
@@ -36,6 +36,20 @@ checkResult.addEventListener("click", function() {
 // Input event listener
 answer.addEventListener("input", function(){
     checkResult.disabled = false;
+})
+
+
+//Enter key press
+document.addEventListener("keydown", function(event){
+    if (!answer.value) {
+        return;
+    }
+    
+    if(event.key === "Enter"){
+        answer.disabled 
+            ? nextButton.click()
+            : checkResult.click();
+    }
 })
 
 generateRandomOperands();
