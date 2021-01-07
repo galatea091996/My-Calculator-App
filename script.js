@@ -38,6 +38,18 @@ answer.addEventListener("input", function(){
     checkResult.disabled = false;
 })
 
+document.addEventListener("keydown", function(event){
+    if (!answer.value) {
+        return;
+    }
+    
+    if(event.keyCode === 13 || event.keyCode === 110){
+        answer.disabled 
+            ? nextButton.click()
+            : checkResult.click();
+    }
+})
+
 generateRandomOperands();
 operator.innerHTML = randomOperator();
 
